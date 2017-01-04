@@ -121,9 +121,8 @@ end
 	local curClipAmmo
 function GM:KeyPress(ply, key)
 	if ply:Team() == 2 then
-		if key == IN_ATTACK2 and action == false then
+		if key == IN_ATTACK2 then
 			if ply:GetModel() == "models/player/zombie_fast.mdl" then
-			action = true
 				timer.Simple(1, function() 
 				ply:SetModel("models/player/gasmask.mdl")
 				ply:RemoveAllItems()
@@ -135,7 +134,6 @@ function GM:KeyPress(ply, key)
 					ply:GiveAmmo(curAmmo, "smg1", true)
 					ply:GetActiveWeapon():SetClip1(curClipAmmo)
 				end
-				action = false
 				end)
 			else
 				curAmmo = ply:GetAmmoCount(ply:GetActiveWeapon():GetPrimaryAmmoType())
@@ -147,10 +145,9 @@ function GM:KeyPress(ply, key)
 				ply:RemoveAllItems()
 				ply:Give("weapon_Crowbar")
 				if ply:FlashlightIsOn() then
-					ply:Flashlight(false)
+				ply:Flashlight(false)
 				end
 				ply:AllowFlashlight( false )
-				action = false
 			end
 		end
 	end
