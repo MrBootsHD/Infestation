@@ -29,9 +29,9 @@ function GM:ShouldCollide( ply1, ply2 )
 	return true
 end
 
-/*function GM:CanPlayerSuicide()
+function GM:CanPlayerSuicide()
 	return false
-end*/
+end
 
 function GM:PlayerSetHandsModel( ply, ent )
 
