@@ -1,0 +1,7 @@
+"infestation"
+{
+	"base"			"base"
+	"title"			"Infestation"
+	"menusystem"	"1"
+	"workshopid"	""
+}
